@@ -1,0 +1,20 @@
+.ui.card {
+    margin: auto;
+    padding: 30px;
+    background-color: #bd1965
+}
+
+.ui.dropdown {
+    background-color: #bd1965;    
+}
+
+.ui.menu {
+    z-index: 10;
+    opacity: 1;
+    overflow: visible;
+    position: absolute !important;
+}
+
+.ui.breadcrumb {
+    padding: 40px;
+}

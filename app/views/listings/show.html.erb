@@ -1,0 +1,38 @@
+<div class="content">
+    <% if current_user %>
+    <div class="ui breadcrumb">
+       <div class="section">Home</div>
+       <div class="divider"> / </div>
+       <div class="active section">Listings</div>
+    </div>
+    <% end %>
+    <br>
+    <div style="margin-left: 32px" class="button">
+    <%= link_to 'Edit', edit_listing_path(@listing), class: 'ui button' %>
+    <%= link_to 'Back', listings_path, class: 'ui button' %>
+    </div>
+
+    <center><div style="margin-left: auto; margin-right: auto;" class="listings">
+    <div style="margin: 40px 40px;" class="ui stackable four cards">
+    <div style="padding: 60px" class="card">
+      <h2><%= current_user.username %></h2>
+      <div class="image">
+    	  <%= image_tag(@listing.image) %>
+      </div>
+				<h3><%= @listing.name %></h3>
+				<%= @listing.category %><br>
+				<%= @listing.brand %><br>
+				$<%= @listing.price %><br>
+				<%= @listing.color %><br>
+                <%= @listing.description %><br>
+        <br>
+    </div>
+    </div>
+    </div></center>
+    
+    <div style="padding: 50px;" class="reviews">
+    <%= commontator_thread(@listing) %>
+    </div>
+    <br>
+    <br>
+</div>

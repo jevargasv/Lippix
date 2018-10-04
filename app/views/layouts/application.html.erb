@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Lippix</title>
+    <link rel="shortcut icon" type="image/png" href="<%= asset_path('Lippix_Logo.png') %>">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.3/semantic.min.css">
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.css" rel="stylesheet"> <!-- 3 KB --> <!-- For the carousel -->
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    
+  </head>
+  <body>
+  <div class="add-to-cart-bar">
+   <div class="add-to-cart-right">
+    <p id="add-to-cart">Add to Cart</p>
+    <%= link_to image_tag('cart.png', class: 'add-to-cart-pic'), "/" %>
+    <span id="itemCount">0</span>
+   </div>
+  </div>
+  <div class="top-nav">
+   <div id="top-nav-left">
+     <%= link_to image_tag('Lippix_Logo.png', class: 'logo'), "/" %>
+  <% if current_user %>
+  <div class="ui compact menu">
+   <div class="ui simple dropdown item">
+    Welcome, <%= current_user.username %>!
+    <i class="dropdown icon"></i>
+   <div class="menu">
+      <a href="/<%= current_user.username %>" class="item">Account</a>
+      <a href="/<%= current_user.username %>/new" class="item">List a Item</a>
+      <%= link_to 'Sign Out', destroy_user_session_path, method: :delete , :class => "item" %>
+   </div>
+   </div>
+  </div>
+  <% end %>
+    <% unless current_user %>
+     <div class="ui buttons">
+       <a href="/users/sign_in"><button class="ui pink button">Login</button></a>
+       <div class="or"></div>
+       <a href="/users/sign_up"><button class="ui pink button">Sign Up</button></a>
+     </div>
+    <% end %>
+   </div>
+  </div>
+
+  <div class="bottom-nav">
+   <div id="bottom-nav-left">
+   <a href="/" class="item">HOME</a>
+   <% if current_user %>
+   <a href="/listings" class="item">LISTINGS</a>
+   <% end %>
+   <% unless current_user %>
+   <a href="/users/sign_in" class="item">LISTINGS</a>
+   <% end %>
+   <a href="/page/about_us" class="item">ABOUT US</a>
+   <a href="/page/contact_us" class="item">CONTACT US</a>
+   <div class="search-tools">
+    <%= form_tag "/search", controller: 'page', action: 'search', class: 'ui fluid category search' do %>
+      <div class="ui large icon input">
+        <%= text_field_tag :search, '', placeholder: 'SEARCH' %>
+        <%= button_tag "<i class='large search icon'></i>".html_safe %>
+      </div>
+    <% end %>
+   </div>
+   </div>
+  </div>
+
+  <div class="content">
+      <!-- Site content !-->
+    <% flash.each do |key, value| %>
+        <div class="alert alert-<%= key %>"><%= value %></div>
+    <% end %>
+      <%= yield %>
+  </div>
+
+  <footer>
+  <div class="social-media-icons">
+    <a href="https://www.facebook.com"><i class="big circular pink inverted facebook icon"></i></a>
+    <a href="https://www.twitter.com"><i class="big circular pink inverted twitter icon"></i></a>
+    <a href="https://www.instagram.com"><i class="big circular pink inverted instagram icon"></i></a>
+    <a href="https://www.pinterest.com"><i class="big circular pink inverted pinterest icon"></i></a>
+  </div>
+  <p id="copyright">&copy; 2018 Lippix Inc.</p>
+  </footer>
+  </body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.3/semantic.min.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.js"></script> <!-- 16 KB --> <!-- For the carousel -->
+</html>

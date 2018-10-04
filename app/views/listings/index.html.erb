@@ -1,0 +1,41 @@
+<div class="content">
+<div class="ui breadcrumb">
+   <div class="section">Home</div>
+   <div class="divider"> / </div>
+   <div class="active section">Listings</div>
+</div>
+<br>
+<div style="margin-left: 32px" class="button">
+<%= link_to 'New Listing', new_listing_path, class: 'ui pink button' %>
+</div>
+<br>
+<br>
+<center>
+<div style="padding: 60px;" class="ui four stackable cards">
+<% @listings.each do |listing| %>
+<div style="padding: 60px;" class="card">
+    <h2><%= current_user.username %></h2>
+      <div style="height: 200px; width: 200px;" class="image">
+          <%= image_tag(listing.image) %>
+      </div>
+            <h3><%= listing.name %></h3>
+                <%= listing.category %><br>
+                <%= listing.brand %><br>
+               $<%= listing.price %><br>
+                <%= listing.color %><br>
+            <%= listing.description %><br>
+    <br>
+    <%= link_to 'Show', listing %>
+    <%= link_to 'Edit', edit_listing_path(listing) %>
+    <%= link_to 'Delete', listing, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <br>
+    <br>
+    <button class="ui positive button">
+    Add to Cart
+    </button>
+</div>
+<% end %>
+</div>
+<br>
+<br>
+</center>
