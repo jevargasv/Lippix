@@ -1,0 +1,961 @@
+Started GET "/" for 127.0.0.1 at 2018-10-04 11:29:53 -0400
+  
+ActiveRecord::NoDatabaseError (FATAL:  database "lippix_development" does not exist
+):
+  
+activerecord (5.2.1) lib/active_record/connection_adapters/postgresql_adapter.rb:688:in `rescue in connect'
+activerecord (5.2.1) lib/active_record/connection_adapters/postgresql_adapter.rb:683:in `connect'
+activerecord (5.2.1) lib/active_record/connection_adapters/postgresql_adapter.rb:215:in `initialize'
+activerecord (5.2.1) lib/active_record/connection_adapters/postgresql_adapter.rb:40:in `new'
+activerecord (5.2.1) lib/active_record/connection_adapters/postgresql_adapter.rb:40:in `postgresql_connection'
+activerecord (5.2.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:809:in `new_connection'
+activerecord (5.2.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:853:in `checkout_new_connection'
+activerecord (5.2.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:832:in `try_to_checkout_new_connection'
+activerecord (5.2.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:793:in `acquire_connection'
+activerecord (5.2.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:521:in `checkout'
+activerecord (5.2.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:380:in `connection'
+activerecord (5.2.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:1008:in `retrieve_connection'
+activerecord (5.2.1) lib/active_record/connection_handling.rb:118:in `retrieve_connection'
+activerecord (5.2.1) lib/active_record/connection_handling.rb:90:in `connection'
+activerecord (5.2.1) lib/active_record/migration.rb:554:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+  [1m[35m (501.4ms)[0m  [1m[35mCREATE DATABASE "lippix_development" ENCODING = 'unicode'[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (437.0ms)[0m  [1m[35mCREATE DATABASE "lippix_test" ENCODING = 'unicode'[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35mSQL (6.4ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  ↳ db/schema.rb:16
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "active_storage_attachments" CASCADE[0m
+  ↳ db/schema.rb:18
+  [1m[35m (27.8ms)[0m  [1m[35mCREATE TABLE "active_storage_attachments" ("id" bigserial primary key, "name" character varying NOT NULL, "record_type" character varying NOT NULL, "record_id" bigint NOT NULL, "blob_id" bigint NOT NULL, "created_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:18
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE  INDEX  "index_active_storage_attachments_on_blob_id" ON "active_storage_attachments"  ("blob_id")[0m
+  ↳ db/schema.rb:18
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_active_storage_attachments_uniqueness" ON "active_storage_attachments"  ("record_type", "record_id", "name", "blob_id")[0m
+  ↳ db/schema.rb:18
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "active_storage_blobs" CASCADE[0m
+  ↳ db/schema.rb:28
+  [1m[35m (4.8ms)[0m  [1m[35mCREATE TABLE "active_storage_blobs" ("id" bigserial primary key, "key" character varying NOT NULL, "filename" character varying NOT NULL, "content_type" character varying, "metadata" text, "byte_size" bigint NOT NULL, "checksum" character varying NOT NULL, "created_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:28
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_active_storage_blobs_on_key" ON "active_storage_blobs"  ("key")[0m
+  ↳ db/schema.rb:28
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "carts" CASCADE[0m
+  ↳ db/schema.rb:39
+  [1m[35m (2.0ms)[0m  [1m[35mCREATE TABLE "carts" ("id" bigserial primary key, "user_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:39
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE  INDEX  "index_carts_on_user_id" ON "carts"  ("user_id")[0m
+  ↳ db/schema.rb:39
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "commontator_comments" CASCADE[0m
+  ↳ db/schema.rb:46
+  [1m[35m (3.1ms)[0m  [1m[35mCREATE TABLE "commontator_comments" ("id" serial NOT NULL PRIMARY KEY, "creator_type" character varying, "creator_id" integer, "editor_type" character varying, "editor_id" integer, "thread_id" integer NOT NULL, "body" text NOT NULL, "deleted_at" timestamp, "cached_votes_up" integer DEFAULT 0, "cached_votes_down" integer DEFAULT 0, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:46
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE  INDEX  "index_commontator_comments_on_cached_votes_down" ON "commontator_comments"  ("cached_votes_down")[0m
+  ↳ db/schema.rb:46
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE  INDEX  "index_commontator_comments_on_cached_votes_up" ON "commontator_comments"  ("cached_votes_up")[0m
+  ↳ db/schema.rb:46
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE  INDEX  "index_commontator_comments_on_c_id_and_c_type_and_t_id" ON "commontator_comments"  ("creator_id", "creator_type", "thread_id")[0m
+  ↳ db/schema.rb:46
+  [1m[35m (2.3ms)[0m  [1m[35mCREATE  INDEX  "index_commontator_comments_on_thread_id_and_created_at" ON "commontator_comments"  ("thread_id", "created_at")[0m
+  ↳ db/schema.rb:46
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "commontator_subscriptions" CASCADE[0m
+  ↳ db/schema.rb:64
+  [1m[35m (3.4ms)[0m  [1m[35mCREATE TABLE "commontator_subscriptions" ("id" serial NOT NULL PRIMARY KEY, "subscriber_type" character varying NOT NULL, "subscriber_id" integer NOT NULL, "thread_id" integer NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:64
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_commontator_subscriptions_on_s_id_and_s_type_and_t_id" ON "commontator_subscriptions"  ("subscriber_id", "subscriber_type", "thread_id")[0m
+  ↳ db/schema.rb:64
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE  INDEX  "index_commontator_subscriptions_on_thread_id" ON "commontator_subscriptions"  ("thread_id")[0m
+  ↳ db/schema.rb:64
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "commontator_threads" CASCADE[0m
+  ↳ db/schema.rb:74
+  [1m[35m (2.7ms)[0m  [1m[35mCREATE TABLE "commontator_threads" ("id" serial NOT NULL PRIMARY KEY, "commontable_type" character varying, "commontable_id" integer, "closed_at" timestamp, "closer_type" character varying, "closer_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:74
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_commontator_threads_on_c_id_and_c_type" ON "commontator_threads"  ("commontable_id", "commontable_type")[0m
+  ↳ db/schema.rb:74
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "listings" CASCADE[0m
+  ↳ db/schema.rb:85
+  [1m[35m (3.1ms)[0m  [1m[35mCREATE TABLE "listings" ("id" bigserial primary key, "name" character varying NOT NULL, "category" character varying NOT NULL, "brand" character varying NOT NULL, "price" integer NOT NULL, "color" character varying NOT NULL, "description" text NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:85
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE  INDEX  "index_listings_on_name" ON "listings"  ("name")[0m
+  ↳ db/schema.rb:85
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  ↳ db/schema.rb:97
+  [1m[35m (5.8ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "username" character varying NOT NULL, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "userable_type" character varying, "userable_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:97
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  ↳ db/schema.rb:97
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users"  ("reset_password_token")[0m
+  ↳ db/schema.rb:97
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE  INDEX  "index_users_on_userable_type_and_userable_id" ON "users"  ("userable_type", "userable_id")[0m
+  ↳ db/schema.rb:97
+  [1m[35m (4.0ms)[0m  [1m[35mALTER TABLE "carts" ADD CONSTRAINT "fk_rails_ea59a35211"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  ↳ db/schema.rb:113
+  [1m[35m (3.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (6.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20180922014216)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (6.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20180919015850),
+(20180919003214),
+(20180919034514),
+(20180918212911);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (25.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-10-04 15:31:13.347691"], ["updated_at", "2018-10-04 15:31:13.347691"]]
+  ↳ db/schema.rb:13
+  [1m[35m (6.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35mSQL (0.5ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  ↳ db/schema.rb:16
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "active_storage_attachments" CASCADE[0m
+  ↳ db/schema.rb:18
+  [1m[35m (6.7ms)[0m  [1m[35mCREATE TABLE "active_storage_attachments" ("id" bigserial primary key, "name" character varying NOT NULL, "record_type" character varying NOT NULL, "record_id" bigint NOT NULL, "blob_id" bigint NOT NULL, "created_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:18
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE  INDEX  "index_active_storage_attachments_on_blob_id" ON "active_storage_attachments"  ("blob_id")[0m
+  ↳ db/schema.rb:18
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_active_storage_attachments_uniqueness" ON "active_storage_attachments"  ("record_type", "record_id", "name", "blob_id")[0m
+  ↳ db/schema.rb:18
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "active_storage_blobs" CASCADE[0m
+  ↳ db/schema.rb:28
+  [1m[35m (3.7ms)[0m  [1m[35mCREATE TABLE "active_storage_blobs" ("id" bigserial primary key, "key" character varying NOT NULL, "filename" character varying NOT NULL, "content_type" character varying, "metadata" text, "byte_size" bigint NOT NULL, "checksum" character varying NOT NULL, "created_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:28
+  [1m[35m (2.0ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_active_storage_blobs_on_key" ON "active_storage_blobs"  ("key")[0m
+  ↳ db/schema.rb:28
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "carts" CASCADE[0m
+  ↳ db/schema.rb:39
+  [1m[35m (2.5ms)[0m  [1m[35mCREATE TABLE "carts" ("id" bigserial primary key, "user_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:39
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE  INDEX  "index_carts_on_user_id" ON "carts"  ("user_id")[0m
+  ↳ db/schema.rb:39
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "commontator_comments" CASCADE[0m
+  ↳ db/schema.rb:46
+  [1m[35m (3.7ms)[0m  [1m[35mCREATE TABLE "commontator_comments" ("id" serial NOT NULL PRIMARY KEY, "creator_type" character varying, "creator_id" integer, "editor_type" character varying, "editor_id" integer, "thread_id" integer NOT NULL, "body" text NOT NULL, "deleted_at" timestamp, "cached_votes_up" integer DEFAULT 0, "cached_votes_down" integer DEFAULT 0, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:46
+  [1m[35m (2.1ms)[0m  [1m[35mCREATE  INDEX  "index_commontator_comments_on_cached_votes_down" ON "commontator_comments"  ("cached_votes_down")[0m
+  ↳ db/schema.rb:46
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE  INDEX  "index_commontator_comments_on_cached_votes_up" ON "commontator_comments"  ("cached_votes_up")[0m
+  ↳ db/schema.rb:46
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE  INDEX  "index_commontator_comments_on_c_id_and_c_type_and_t_id" ON "commontator_comments"  ("creator_id", "creator_type", "thread_id")[0m
+  ↳ db/schema.rb:46
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE  INDEX  "index_commontator_comments_on_thread_id_and_created_at" ON "commontator_comments"  ("thread_id", "created_at")[0m
+  ↳ db/schema.rb:46
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "commontator_subscriptions" CASCADE[0m
+  ↳ db/schema.rb:64
+  [1m[35m (4.7ms)[0m  [1m[35mCREATE TABLE "commontator_subscriptions" ("id" serial NOT NULL PRIMARY KEY, "subscriber_type" character varying NOT NULL, "subscriber_id" integer NOT NULL, "thread_id" integer NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:64
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_commontator_subscriptions_on_s_id_and_s_type_and_t_id" ON "commontator_subscriptions"  ("subscriber_id", "subscriber_type", "thread_id")[0m
+  ↳ db/schema.rb:64
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE  INDEX  "index_commontator_subscriptions_on_thread_id" ON "commontator_subscriptions"  ("thread_id")[0m
+  ↳ db/schema.rb:64
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "commontator_threads" CASCADE[0m
+  ↳ db/schema.rb:74
+  [1m[35m (3.3ms)[0m  [1m[35mCREATE TABLE "commontator_threads" ("id" serial NOT NULL PRIMARY KEY, "commontable_type" character varying, "commontable_id" integer, "closed_at" timestamp, "closer_type" character varying, "closer_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:74
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_commontator_threads_on_c_id_and_c_type" ON "commontator_threads"  ("commontable_id", "commontable_type")[0m
+  ↳ db/schema.rb:74
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "listings" CASCADE[0m
+  ↳ db/schema.rb:85
+  [1m[35m (3.9ms)[0m  [1m[35mCREATE TABLE "listings" ("id" bigserial primary key, "name" character varying NOT NULL, "category" character varying NOT NULL, "brand" character varying NOT NULL, "price" integer NOT NULL, "color" character varying NOT NULL, "description" text NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:85
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE  INDEX  "index_listings_on_name" ON "listings"  ("name")[0m
+  ↳ db/schema.rb:85
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  ↳ db/schema.rb:97
+  [1m[35m (4.2ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "username" character varying NOT NULL, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "userable_type" character varying, "userable_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:97
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  ↳ db/schema.rb:97
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users"  ("reset_password_token")[0m
+  ↳ db/schema.rb:97
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE  INDEX  "index_users_on_userable_type_and_userable_id" ON "users"  ("userable_type", "userable_id")[0m
+  ↳ db/schema.rb:97
+  [1m[35m (2.5ms)[0m  [1m[35mALTER TABLE "carts" ADD CONSTRAINT "fk_rails_ea59a35211"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  ↳ db/schema.rb:113
+  [1m[35m (3.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20180922014216)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20180919015850),
+(20180919003214),
+(20180919034514),
+(20180918212911);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (2.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-10-04 15:31:13.518542"], ["updated_at", "2018-10-04 15:31:13.518542"]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Update (0.5ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2018-10-04 15:31:13.523734"], ["key", "environment"]]
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:1
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "blueroses90@email.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:1
+  [1m[36mUser Create (0.9ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "jennyvarg90"], ["email", "blueroses90@email.com"], ["encrypted_password", "$2a$11$qv6Ms0vcbSo.b0ojkB/3WeS/kbf734gW7wSd7w8t/1ywmGJ8vaSy2"], ["created_at", "2018-10-04 15:31:13.685844"], ["updated_at", "2018-10-04 15:31:13.685844"]]
+  ↳ db/seeds.rb:1
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:1
+Started GET "/" for 127.0.0.1 at 2018-10-04 11:31:36 -0400
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/local/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  
+ActionController::RoutingError (Couldn't find AccountHelper, expected it to be defined in helpers/account_helper.rb):
+  
+app/controllers/application_controller.rb:1:in `<main>'
+app/controllers/page_controller.rb:1:in `<main>'
+Started POST "/__web_console/repl_sessions/3dcb7f7ccc7c00028ef3546d0dbf3ef3/trace" for 127.0.0.1 at 2018-10-04 11:32:01 -0400
+Started POST "/__web_console/repl_sessions/3dcb7f7ccc7c00028ef3546d0dbf3ef3/trace" for 127.0.0.1 at 2018-10-04 11:32:03 -0400
+Started GET "/" for 127.0.0.1 at 2018-10-04 11:37:42 -0400
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/local/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  
+ActionController::RoutingError (Couldn't find PageHelper, expected it to be defined in helpers/page_helper.rb):
+  
+app/controllers/application_controller.rb:1:in `<main>'
+app/controllers/page_controller.rb:1:in `<main>'
+Started GET "/" for 127.0.0.1 at 2018-10-04 11:37:45 -0400
+  
+ActionController::RoutingError (Couldn't find PageHelper, expected it to be defined in helpers/page_helper.rb):
+  
+app/controllers/application_controller.rb:1:in `<main>'
+app/controllers/page_controller.rb:1:in `<main>'
+Started GET "/" for 127.0.0.1 at 2018-10-04 11:37:59 -0400
+  
+ActionController::RoutingError (Couldn't find PageHelper, expected it to be defined in helpers/page_helper.rb):
+  
+app/controllers/application_controller.rb:1:in `<main>'
+app/controllers/page_controller.rb:1:in `<main>'
+Started GET "/" for 127.0.0.1 at 2018-10-04 11:38:19 -0400
+Processing by PageController#home as HTML
+  Rendering page/home.html.erb within layouts/application
+  Rendered page/home.html.erb within layouts/application (272.5ms)
+Completed 500 Internal Server Error in 290ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (couldn't find file 'jquery' with type 'application/javascript'
+Checked in these paths: 
+  /Users/jennifervargas/Lippix/app/assets/config
+  /Users/jennifervargas/Lippix/app/assets/images
+  /Users/jennifervargas/Lippix/app/assets/javascripts
+  /Users/jennifervargas/Lippix/app/assets/stylesheets
+  /usr/local/lib/ruby/gems/2.5.0/gems/commontator-5.1.0/app/assets/images
+  /usr/local/lib/ruby/gems/2.5.0/gems/commontator-5.1.0/app/assets/javascripts
+  /usr/local/lib/ruby/gems/2.5.0/gems/commontator-5.1.0/app/assets/stylesheets
+  /usr/local/lib/ruby/gems/2.5.0/gems/commontator-5.1.0/vendor/assets/javascripts
+  /usr/local/lib/ruby/gems/2.5.0/gems/commontator-5.1.0/vendor/assets/stylesheets
+  /usr/local/lib/ruby/gems/2.5.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /usr/local/lib/ruby/gems/2.5.0/gems/actioncable-5.2.1/lib/assets/compiled
+  /usr/local/lib/ruby/gems/2.5.0/gems/activestorage-5.2.1/app/assets/javascripts
+  /usr/local/lib/ruby/gems/2.5.0/gems/actionview-5.2.1/lib/assets/compiled
+  /usr/local/lib/ruby/gems/2.5.0/gems/turbolinks-source-5.2.0/lib/assets/javascripts
+  /Users/jennifervargas/Lippix/node_modules):
+     5:     </div>
+     6:     <% end %>
+     7:     <center><div class="fotorama" data-autoplay="true" data-width="1200" data-height="1000">
+     8:         <%= link_to image_tag("ysl-lipgloss.jpg"), "/listings" %>
+     9:         <%= link_to image_tag("fenty-matte-lipstick.jpg"), "/listings" %>
+    10:         <%= link_to image_tag("guerlain-lipgloss.jpg"), "/listings" %>
+    11:         <%= link_to image_tag("tom-ford-lipstain.jpg"), "/listings" %>
+  
+app/assets/javascripts/application.js:15
+app/views/page/home.html.erb:8:in `_app_views_page_home_html_erb__2602880074505742435_70272156873220'
+Started GET "/" for 127.0.0.1 at 2018-10-04 11:38:22 -0400
+Processing by PageController#home as HTML
+  Rendering page/home.html.erb within layouts/application
+  Rendered page/home.html.erb within layouts/application (25.2ms)
+Completed 500 Internal Server Error in 40ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (couldn't find file 'jquery' with type 'application/javascript'
+Checked in these paths: 
+  /Users/jennifervargas/Lippix/app/assets/config
+  /Users/jennifervargas/Lippix/app/assets/images
+  /Users/jennifervargas/Lippix/app/assets/javascripts
+  /Users/jennifervargas/Lippix/app/assets/stylesheets
+  /usr/local/lib/ruby/gems/2.5.0/gems/commontator-5.1.0/app/assets/images
+  /usr/local/lib/ruby/gems/2.5.0/gems/commontator-5.1.0/app/assets/javascripts
+  /usr/local/lib/ruby/gems/2.5.0/gems/commontator-5.1.0/app/assets/stylesheets
+  /usr/local/lib/ruby/gems/2.5.0/gems/commontator-5.1.0/vendor/assets/javascripts
+  /usr/local/lib/ruby/gems/2.5.0/gems/commontator-5.1.0/vendor/assets/stylesheets
+  /usr/local/lib/ruby/gems/2.5.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /usr/local/lib/ruby/gems/2.5.0/gems/actioncable-5.2.1/lib/assets/compiled
+  /usr/local/lib/ruby/gems/2.5.0/gems/activestorage-5.2.1/app/assets/javascripts
+  /usr/local/lib/ruby/gems/2.5.0/gems/actionview-5.2.1/lib/assets/compiled
+  /usr/local/lib/ruby/gems/2.5.0/gems/turbolinks-source-5.2.0/lib/assets/javascripts
+  /Users/jennifervargas/Lippix/node_modules):
+     5:     </div>
+     6:     <% end %>
+     7:     <center><div class="fotorama" data-autoplay="true" data-width="1200" data-height="1000">
+     8:         <%= link_to image_tag("ysl-lipgloss.jpg"), "/listings" %>
+     9:         <%= link_to image_tag("fenty-matte-lipstick.jpg"), "/listings" %>
+    10:         <%= link_to image_tag("guerlain-lipgloss.jpg"), "/listings" %>
+    11:         <%= link_to image_tag("tom-ford-lipstain.jpg"), "/listings" %>
+  
+app/assets/javascripts/application.js:15
+app/views/page/home.html.erb:8:in `_app_views_page_home_html_erb__2602880074505742435_70272212370880'
+Started GET "/" for 127.0.0.1 at 2018-10-04 11:42:27 -0400
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/local/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by PageController#home as HTML
+  Rendering page/home.html.erb within layouts/application
+  Rendered page/home.html.erb within layouts/application (529.6ms)
+Completed 200 OK in 649ms (Views: 638.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/listings" for 127.0.0.1 at 2018-10-04 11:42:30 -0400
+Processing by ListingsController#index as HTML
+  Rendering listings/index.html.erb within layouts/application
+  [1m[36mListing Load (1.2ms)[0m  [1m[34mSELECT "listings".* FROM "listings"[0m
+  ↳ app/views/listings/index.html.erb:17
+  Rendered listings/index.html.erb within layouts/application (9.7ms)
+Completed 200 OK in 91ms (Views: 71.6ms | ActiveRecord: 4.6ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-10-04 11:42:41 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.5ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (55.0ms)
+Completed 200 OK in 134ms (Views: 106.9ms | ActiveRecord: 7.8ms)
+
+
+Started GET "/page/about_us" for 127.0.0.1 at 2018-10-04 11:42:46 -0400
+Processing by PageController#about_us as HTML
+  Rendering page/about_us.html.erb within layouts/application
+  Rendered page/about_us.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 55ms (Views: 46.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/page/contact_us" for 127.0.0.1 at 2018-10-04 11:42:51 -0400
+Processing by PageController#contact_us as HTML
+  Rendering page/contact_us.html.erb within layouts/application
+  Rendered page/contact_us.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 51ms (Views: 43.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-10-04 11:43:19 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (9.9ms)
+Completed 200 OK in 67ms (Views: 65.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/page/contact_us" for 127.0.0.1 at 2018-10-04 11:44:12 -0400
+Processing by PageController#contact_us as HTML
+  Rendering page/contact_us.html.erb within layouts/application
+  Rendered page/contact_us.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 56ms (Views: 52.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/page/about_us" for 127.0.0.1 at 2018-10-04 11:44:14 -0400
+Processing by PageController#about_us as HTML
+  Rendering page/about_us.html.erb within layouts/application
+  Rendered page/about_us.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 50ms (Views: 47.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-10-04 11:44:20 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 59ms (Views: 57.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-10-04 11:44:21 -0400
+Processing by PageController#home as HTML
+  Rendering page/home.html.erb within layouts/application
+  Rendered page/home.html.erb within layouts/application (14.5ms)
+Completed 200 OK in 69ms (Views: 66.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/listings" for 127.0.0.1 at 2018-10-04 11:44:21 -0400
+Processing by ListingsController#index as HTML
+  Rendering listings/index.html.erb within layouts/application
+  [1m[36mListing Load (0.4ms)[0m  [1m[34mSELECT "listings".* FROM "listings"[0m
+  ↳ app/views/listings/index.html.erb:17
+  Rendered listings/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 53ms (Views: 48.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-10-04 11:49:01 -0400
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/local/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by PageController#home as HTML
+  Rendering page/home.html.erb within layouts/application
+  Rendered page/home.html.erb within layouts/application (164.0ms)
+Completed 200 OK in 261ms (Views: 248.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/listings" for 127.0.0.1 at 2018-10-04 11:49:01 -0400
+Processing by ListingsController#index as HTML
+  Rendering listings/index.html.erb within layouts/application
+  [1m[36mListing Load (0.6ms)[0m  [1m[34mSELECT "listings".* FROM "listings"[0m
+  ↳ app/views/listings/index.html.erb:15
+  Rendered listings/index.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 88ms (Views: 78.1ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-10-04 11:49:04 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.6ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (18.9ms)
+Completed 200 OK in 113ms (Views: 86.2ms | ActiveRecord: 6.6ms)
+
+
+Started GET "/page/about_us" for 127.0.0.1 at 2018-10-04 11:49:05 -0400
+Processing by PageController#about_us as HTML
+  Rendering page/about_us.html.erb within layouts/application
+  Rendered page/about_us.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 50ms (Views: 47.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/listings" for 127.0.0.1 at 2018-10-04 11:49:07 -0400
+Processing by ListingsController#index as HTML
+  Rendering listings/index.html.erb within layouts/application
+  [1m[36mListing Load (0.3ms)[0m  [1m[34mSELECT "listings".* FROM "listings"[0m
+  ↳ app/views/listings/index.html.erb:15
+  Rendered listings/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 48ms (Views: 45.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/page/contact_us" for 127.0.0.1 at 2018-10-04 11:49:08 -0400
+Processing by PageController#contact_us as HTML
+  Rendering page/contact_us.html.erb within layouts/application
+  Rendered page/contact_us.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 51ms (Views: 49.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/listings" for 127.0.0.1 at 2018-10-04 11:49:12 -0400
+Processing by ListingsController#index as HTML
+  Rendering listings/index.html.erb within layouts/application
+  [1m[36mListing Load (0.3ms)[0m  [1m[34mSELECT "listings".* FROM "listings"[0m
+  ↳ app/views/listings/index.html.erb:15
+  Rendered listings/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 45ms (Views: 42.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/page/about_us" for 127.0.0.1 at 2018-10-04 11:49:13 -0400
+Processing by PageController#about_us as HTML
+  Rendering page/about_us.html.erb within layouts/application
+  Rendered page/about_us.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 64ms (Views: 61.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/page/contact_us" for 127.0.0.1 at 2018-10-04 11:49:18 -0400
+Processing by PageController#contact_us as HTML
+  Rendering page/contact_us.html.erb within layouts/application
+  Rendered page/contact_us.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 69ms (Views: 65.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-10-04 11:49:22 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.5ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (10.4ms)
+Completed 200 OK in 72ms (Views: 70.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-10-04 11:49:28 -0400
+Processing by PageController#home as HTML
+  Rendering page/home.html.erb within layouts/application
+  Rendered page/home.html.erb within layouts/application (22.4ms)
+Completed 200 OK in 88ms (Views: 85.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/listings" for 127.0.0.1 at 2018-10-04 11:49:29 -0400
+Processing by ListingsController#index as HTML
+  Rendering listings/index.html.erb within layouts/application
+  [1m[36mListing Load (0.4ms)[0m  [1m[34mSELECT "listings".* FROM "listings"[0m
+  ↳ app/views/listings/index.html.erb:15
+  Rendered listings/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 60ms (Views: 56.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-10-04 11:51:01 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.8ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (9.8ms)
+Completed 200 OK in 67ms (Views: 65.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2018-10-04 11:51:40 -0400
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bR5ATadEXxty8B1EqFltjt/AOrxhIEg5bXmnGqtIcT8jNqjxO3bfdlUPtEqPNXroTL6Oqc2jrP/9kcDu6c1ZEA==", "user"=>{"email"=>"blueroses90@email.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "blueroses90@email.com"], ["LIMIT", 1]]
+  ↳ /usr/local/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 154ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-10-04 11:51:40 -0400
+Processing by PageController#home as HTML
+  Rendering page/home.html.erb within layouts/application
+  Rendered page/home.html.erb within layouts/application (10.6ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+Completed 200 OK in 54ms (Views: 52.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/listings" for 127.0.0.1 at 2018-10-04 11:51:40 -0400
+Processing by ListingsController#index as HTML
+  Rendering listings/index.html.erb within layouts/application
+  [1m[36mListing Load (0.5ms)[0m  [1m[34mSELECT "listings".* FROM "listings"[0m
+  ↳ app/views/listings/index.html.erb:15
+  Rendered listings/index.html.erb within layouts/application (2.3ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+Completed 200 OK in 65ms (Views: 61.4ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/listings" for 127.0.0.1 at 2018-10-04 11:51:44 -0400
+Processing by ListingsController#index as HTML
+  Rendering listings/index.html.erb within layouts/application
+  [1m[36mListing Load (0.4ms)[0m  [1m[34mSELECT "listings".* FROM "listings"[0m
+  ↳ app/views/listings/index.html.erb:15
+  Rendered listings/index.html.erb within layouts/application (2.0ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+Completed 200 OK in 55ms (Views: 51.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/listings" for 127.0.0.1 at 2018-10-04 11:51:46 -0400
+Processing by ListingsController#index as HTML
+  Rendering listings/index.html.erb within layouts/application
+  [1m[36mListing Load (0.3ms)[0m  [1m[34mSELECT "listings".* FROM "listings"[0m
+  ↳ app/views/listings/index.html.erb:15
+  Rendered listings/index.html.erb within layouts/application (1.6ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+Completed 200 OK in 48ms (Views: 45.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/page/about_us" for 127.0.0.1 at 2018-10-04 11:51:51 -0400
+Processing by PageController#about_us as HTML
+  Rendering page/about_us.html.erb within layouts/application
+  Rendered page/about_us.html.erb within layouts/application (1.3ms)
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+Completed 200 OK in 64ms (Views: 60.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/page/contact_us" for 127.0.0.1 at 2018-10-04 11:51:53 -0400
+Processing by PageController#contact_us as HTML
+  Rendering page/contact_us.html.erb within layouts/application
+  Rendered page/contact_us.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+Completed 200 OK in 55ms (Views: 51.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/page/about_us" for 127.0.0.1 at 2018-10-04 11:51:54 -0400
+Processing by PageController#about_us as HTML
+  Rendering page/about_us.html.erb within layouts/application
+  Rendered page/about_us.html.erb within layouts/application (3.0ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+Completed 200 OK in 68ms (Views: 64.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/listings" for 127.0.0.1 at 2018-10-04 11:51:55 -0400
+Processing by ListingsController#index as HTML
+  Rendering listings/index.html.erb within layouts/application
+  [1m[36mListing Load (0.4ms)[0m  [1m[34mSELECT "listings".* FROM "listings"[0m
+  ↳ app/views/listings/index.html.erb:15
+  Rendered listings/index.html.erb within layouts/application (2.2ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+Completed 200 OK in 60ms (Views: 56.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/jennyvarg90" for 127.0.0.1 at 2018-10-04 11:52:01 -0400
+Processing by AccountController#index as HTML
+  Parameters: {"account"=>"jennyvarg90"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "jennyvarg90"], ["LIMIT", 1]]
+  ↳ app/controllers/account_controller.rb:15
+  Rendering account/index.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/account/index.html.erb:7
+  Rendered account/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 50ms (Views: 44.8ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/jennyvarg90/new" for 127.0.0.1 at 2018-10-04 11:52:11 -0400
+Processing by ListingsController#new as HTML
+  Parameters: {"account"=>"jennyvarg90"}
+  Rendering listings/new.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/listings/new.html.erb:2
+  Rendered listings/new.html.erb within layouts/application (16.5ms)
+Completed 200 OK in 73ms (Views: 53.0ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/listings" for 127.0.0.1 at 2018-10-04 11:52:16 -0400
+Processing by ListingsController#index as HTML
+  Rendering listings/index.html.erb within layouts/application
+  [1m[36mListing Load (0.4ms)[0m  [1m[34mSELECT "listings".* FROM "listings"[0m
+  ↳ app/views/listings/index.html.erb:15
+  Rendered listings/index.html.erb within layouts/application (2.4ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+Completed 200 OK in 51ms (Views: 47.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-10-04 11:52:50 -0400
+Processing by PageController#home as HTML
+  Rendering page/home.html.erb within layouts/application
+  Rendered page/home.html.erb within layouts/application (22.8ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+Completed 200 OK in 80ms (Views: 77.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/listings" for 127.0.0.1 at 2018-10-04 11:52:50 -0400
+Processing by ListingsController#index as HTML
+  Rendering listings/index.html.erb within layouts/application
+  [1m[36mListing Load (0.4ms)[0m  [1m[34mSELECT "listings".* FROM "listings"[0m
+  ↳ app/views/listings/index.html.erb:15
+  Rendered listings/index.html.erb within layouts/application (2.2ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+Completed 200 OK in 51ms (Views: 46.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/listings" for 127.0.0.1 at 2018-10-04 11:52:51 -0400
+Processing by ListingsController#index as HTML
+  Rendering listings/index.html.erb within layouts/application
+  [1m[36mListing Load (0.4ms)[0m  [1m[34mSELECT "listings".* FROM "listings"[0m
+  ↳ app/views/listings/index.html.erb:15
+  Rendered listings/index.html.erb within layouts/application (2.6ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+Completed 200 OK in 52ms (Views: 48.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/page/contact_us" for 127.0.0.1 at 2018-10-04 11:52:52 -0400
+Processing by PageController#contact_us as HTML
+  Rendering page/contact_us.html.erb within layouts/application
+  Rendered page/contact_us.html.erb within layouts/application (0.8ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+Completed 200 OK in 51ms (Views: 47.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/listings" for 127.0.0.1 at 2018-10-04 11:52:55 -0400
+Processing by ListingsController#index as HTML
+  Rendering listings/index.html.erb within layouts/application
+  [1m[36mListing Load (0.3ms)[0m  [1m[34mSELECT "listings".* FROM "listings"[0m
+  ↳ app/views/listings/index.html.erb:15
+  Rendered listings/index.html.erb within layouts/application (1.4ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+Completed 200 OK in 35ms (Views: 32.5ms | ActiveRecord: 0.6ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2018-10-04 11:53:00 -0400
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"jdyf23yIgT+nktiogukKumVLvwIpIvXlBzH4QR9vQVIwIib0Q6ig8lJ7OHIA4dqBI5GXE+A2feRiE9f7irm6BQ=="}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /usr/local/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /usr/local/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /usr/local/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 21ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-10-04 11:53:00 -0400
+Processing by PageController#home as HTML
+  Rendering page/home.html.erb within layouts/application
+  Rendered page/home.html.erb within layouts/application (8.6ms)
+Completed 200 OK in 47ms (Views: 44.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/listings" for 127.0.0.1 at 2018-10-04 11:53:01 -0400
+Processing by ListingsController#index as HTML
+  Rendering listings/index.html.erb within layouts/application
+  [1m[36mListing Load (0.4ms)[0m  [1m[34mSELECT "listings".* FROM "listings"[0m
+  ↳ app/views/listings/index.html.erb:15
+  Rendered listings/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 39ms (Views: 36.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-10-04 17:14:52 -0400
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/local/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by PageController#home as HTML
+  Rendering page/home.html.erb within layouts/application
+  Rendered page/home.html.erb within layouts/application (510.8ms)
+Completed 200 OK in 632ms (Views: 621.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/listings" for 127.0.0.1 at 2018-10-04 17:14:53 -0400
+Processing by ListingsController#index as HTML
+  Rendering listings/index.html.erb within layouts/application
+  [1m[36mListing Load (13.8ms)[0m  [1m[34mSELECT "listings".* FROM "listings"[0m
+  ↳ app/views/listings/index.html.erb:15
+  Rendered listings/index.html.erb within layouts/application (20.3ms)
+Completed 200 OK in 115ms (Views: 89.5ms | ActiveRecord: 17.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-10-04 17:15:23 -0400
+Processing by PageController#home as HTML
+  Rendering page/home.html.erb within layouts/application
+  Rendered page/home.html.erb within layouts/application (20.0ms)
+Completed 200 OK in 79ms (Views: 77.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/listings" for 127.0.0.1 at 2018-10-04 17:15:23 -0400
+Processing by ListingsController#index as HTML
+  Rendering listings/index.html.erb within layouts/application
+  [1m[36mListing Load (0.3ms)[0m  [1m[34mSELECT "listings".* FROM "listings"[0m
+  ↳ app/views/listings/index.html.erb:15
+  Rendered listings/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 53ms (Views: 50.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-10-04 17:15:25 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.8ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (24.8ms)
+Completed 200 OK in 108ms (Views: 65.9ms | ActiveRecord: 27.7ms)
+
+
+Started GET "/page/about_us" for 127.0.0.1 at 2018-10-04 17:15:26 -0400
+Processing by PageController#about_us as HTML
+  Rendering page/about_us.html.erb within layouts/application
+  Rendered page/about_us.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 48ms (Views: 45.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/page/contact_us" for 127.0.0.1 at 2018-10-04 17:15:27 -0400
+Processing by PageController#contact_us as HTML
+  Rendering page/contact_us.html.erb within layouts/application
+  Rendered page/contact_us.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 54ms (Views: 45.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/listings" for 127.0.0.1 at 2018-10-04 17:15:29 -0400
+Processing by ListingsController#index as HTML
+  Rendering listings/index.html.erb within layouts/application
+  [1m[36mListing Load (0.3ms)[0m  [1m[34mSELECT "listings".* FROM "listings"[0m
+  ↳ app/views/listings/index.html.erb:15
+  Rendered listings/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 39ms (Views: 36.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-10-04 17:15:30 -0400
+Processing by PageController#home as HTML
+  Rendering page/home.html.erb within layouts/application
+  Rendered page/home.html.erb within layouts/application (15.7ms)
+Completed 200 OK in 69ms (Views: 66.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/listings" for 127.0.0.1 at 2018-10-04 17:15:30 -0400
+Processing by ListingsController#index as HTML
+  Rendering listings/index.html.erb within layouts/application
+  [1m[36mListing Load (0.4ms)[0m  [1m[34mSELECT "listings".* FROM "listings"[0m
+  ↳ app/views/listings/index.html.erb:15
+  Rendered listings/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 43ms (Views: 41.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-10-04 17:16:53 -0400
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/local/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by PageController#home as HTML
+  Rendering page/home.html.erb within layouts/application
+  Rendered page/home.html.erb within layouts/application (490.4ms)
+Completed 200 OK in 594ms (Views: 581.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/listings" for 127.0.0.1 at 2018-10-04 17:16:54 -0400
+Processing by ListingsController#index as HTML
+  Rendering listings/index.html.erb within layouts/application
+  [1m[36mListing Load (0.8ms)[0m  [1m[34mSELECT "listings".* FROM "listings"[0m
+  ↳ app/views/listings/index.html.erb:15
+  Rendered listings/index.html.erb within layouts/application (8.4ms)
+Completed 200 OK in 68ms (Views: 55.7ms | ActiveRecord: 4.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-10-04 17:41:53 -0400
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/local/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by PageController#home as HTML
+  Rendering page/home.html.erb within layouts/application
+  Rendered page/home.html.erb within layouts/application (156.2ms)
+Completed 200 OK in 248ms (Views: 236.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-10-04 17:42:09 -0400
+Processing by PageController#home as HTML
+  Rendering page/home.html.erb within layouts/application
+  Rendered page/home.html.erb within layouts/application (11.5ms)
+Completed 200 OK in 84ms (Views: 81.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-10-04 18:14:03 -0400
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/local/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by PageController#home as HTML
+  Rendering page/home.html.erb within layouts/application
+  Rendered page/home.html.erb within layouts/application (687.1ms)
+Completed 200 OK in 767ms (Views: 756.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-10-04 18:14:07 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (26.8ms)
+Completed 200 OK in 109ms (Views: 62.2ms | ActiveRecord: 36.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-10-04 18:14:08 -0400
+Processing by PageController#home as HTML
+  Rendering page/home.html.erb within layouts/application
+  Rendered page/home.html.erb within layouts/application (13.4ms)
+Completed 200 OK in 64ms (Views: 61.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/page/contact_us" for 127.0.0.1 at 2018-10-04 18:14:18 -0400
+Processing by PageController#contact_us as HTML
+  Rendering page/contact_us.html.erb within layouts/application
+  Rendered page/contact_us.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 46ms (Views: 43.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/page/about_us" for 127.0.0.1 at 2018-10-04 18:14:19 -0400
+Processing by PageController#about_us as HTML
+  Rendering page/about_us.html.erb within layouts/application
+  Rendered page/about_us.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 48ms (Views: 39.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-10-04 18:14:20 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 59ms (Views: 58.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-10-04 18:14:21 -0400
+Processing by PageController#home as HTML
+  Rendering page/home.html.erb within layouts/application
+  Rendered page/home.html.erb within layouts/application (17.8ms)
+Completed 200 OK in 64ms (Views: 61.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-10-04 18:14:45 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 62ms (Views: 60.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/page/about_us" for 127.0.0.1 at 2018-10-04 18:14:46 -0400
+Processing by PageController#about_us as HTML
+  Rendering page/about_us.html.erb within layouts/application
+  Rendered page/about_us.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 48ms (Views: 45.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/page/contact_us" for 127.0.0.1 at 2018-10-04 18:14:47 -0400
+Processing by PageController#contact_us as HTML
+  Rendering page/contact_us.html.erb within layouts/application
+  Rendered page/contact_us.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 52ms (Views: 49.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-10-04 18:14:52 -0400
+Processing by PageController#home as HTML
+  Rendering page/home.html.erb within layouts/application
+  Rendered page/home.html.erb within layouts/application (13.1ms)
+Completed 200 OK in 65ms (Views: 62.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-10-04 18:15:02 -0400
+Processing by PageController#home as HTML
+  Rendering page/home.html.erb within layouts/application
+  Rendered page/home.html.erb within layouts/application (10.7ms)
+Completed 200 OK in 55ms (Views: 52.9ms | ActiveRecord: 0.0ms)
+
+
