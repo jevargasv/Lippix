@@ -75,3 +75,6 @@ gem 'stripe', '~> 3.26.1'
 
 # For searching products with a GET request
 gem 'httparty', '~> 0.16.2'
+
+# For the picture carousel
+gem 'fotoramajs', '~> 4.6.4'
