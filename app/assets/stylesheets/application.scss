@@ -15,7 +15,9 @@
  *= require commontator/application
  */
 
- body {
+@import "fotorama";
+
+body {
     margin: 0 !important;
     background-color: white;
 }
